@@ -1,6 +1,7 @@
+# git checkhot -b main
+import ast
 import statistics
-# Notas de alunos pré definidas
-notas = {"LUIS": [9.0, 8.0], "MATHEUS": [7.5, 9.0], "BRUNO": [10.0, 8.5], "LEIZIANE": [10.0, 10.0]}
+#notas = {"LUIS": [9.0, 8.0], "MATHEUS": [7.5, 9.0], "BRUNO": [10.0, 8.5], "LEIZIANE": [10.0, 10.0]}
 
 
 se = 1
@@ -12,8 +13,6 @@ med = "4 média dos alunos"
 delet = "5 Deletar anluno"
 sair = "0 Sair"
 #----------------------------------------------------------#
-
-# Função de atribuição de um novo aluno para o banco de dados central (dicionário "notas")
 def novoAluno(nome):    
         l = []
         cont = 1
@@ -22,6 +21,12 @@ def novoAluno(nome):
             cont += 1
         notas[nome] = l
         print("Aluno adicionado com sucesso!")
+
+
+arquivo = open("dicionario.txt", "r")
+notas = ast.literal_eval(arquivo.read())
+arquivo.close()
+
     
 while 1:
     print("#"*33)
@@ -105,4 +110,8 @@ while 1:
             print("Dados deletados")
     else:
         print("Programa finalizado")
+        arquivo = open("dicionario.txt", "w")
+        notas = str(notas)
+        notas = arquivo.write(notas)
+        arquivo.close()
         break
