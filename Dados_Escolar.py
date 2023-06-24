@@ -1,11 +1,8 @@
-# git checkhot -b main
 import ast
 import statistics
-#notas = {"LUIS": [9.0, 8.0], "MATHEUS": [7.5, 9.0], "BRUNO": [10.0, 8.5], "LEIZIANE": [10.0, 10.0]}
 
 
 se = 1
-pesoProva = 2
 add = "1 Adicionar aluno"
 most = "2 Mostrar notas dos alunos"
 se = "3 Semestres"
